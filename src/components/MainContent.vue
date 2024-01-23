@@ -10,56 +10,38 @@
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod adipisci excepturi totam eos quas optio quibusdam reiciendis nulla, quo sunt, fugit atque sint praesentium ullam tempore repudiandae distinctio! Quam, ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequatur reiciendis, possimus eos ipsa iste ad omnis ipsam quo ea, cumque expedita amet modi ullam, laudantium nihil rem nam dolor.
             </p>
         </div>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(image, index) in imageList" :key="index">
-                    <img :src="require(`@/${image}`)" alt="">
-                </div>
-            </div>
+         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="@/assets/pescaa.jpg" alt="First slide">
         </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="@/assets/mainImg.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="@/assets/pescaa.jpg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+</div>
 </template>
 
 <script>
-    import Swiper from 'swiper';
-    import 'swiper/swiper-bundle.css';
     export default {
         name: 'MainContent',
-        data() {
-        return {
-        imageList: [
-            'assets/mainImg.jpg',
-            'assets/pescaa.jpg',
-            'assets/mainImg.jpg',
-            'assets/pescaa.jpg',
-            'assets/mainImg.jpg',
-        ],
-        };
-    },
-    mounted() {
-        this.initSwiper();
-        this.startImageCarousel();
-    },
-    methods: {
-        initSwiper() {
-        this.swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: this.imageList.length > 1,
-            speed: 1000, 
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-        });
-        },
-        startImageCarousel() {
-        setInterval(() => {
-            // Troque para o próximo slide
-            this.swiper.slideNext();
-        }, 5000);
-        },
-    },
 };
 </script>
 
@@ -84,7 +66,7 @@
 
 .swiper-container {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-top: 20px;
 }
 
@@ -95,6 +77,7 @@
 }
 .swiper-slide img {
   height: auto;
+  max-width: 100%;
     width: 450px;
   height: 300px;
   object-fit: cover;
@@ -120,6 +103,15 @@
 
   .swiper-slide img {
     width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .swiper-container {
+    height: auto;
+  }
+
+  .swiper-slide img {
+    width: 100%;
   }
 }
 </style>

@@ -31,4 +31,9 @@ export default {
   line-height: 1.6; /* Espaçamento entre linhas */
   letter-spacing: 0.02em
 }
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 </style>

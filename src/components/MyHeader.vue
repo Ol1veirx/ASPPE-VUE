@@ -110,7 +110,7 @@ nav {
     }
     .header-container{
       /* display: none; */
-      position: fixed;
+      position: absolute;
       top: 11%;
       left: 70%;
       width: 100px;
