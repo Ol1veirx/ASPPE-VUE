@@ -24,7 +24,7 @@ export default {
 
 .link-box {
   background-color: #044040;
-  width: 300px;
+  width: 400px;
   height: 150px;
   margin: 0 auto;
   margin-top: 30px;
@@ -35,5 +35,11 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .link-box{
+      width: 320px;
+  }
 }
 </style>

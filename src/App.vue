@@ -27,7 +27,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  background-color: white;
+  background-color: #F5F5F5;
   line-height: 1.6; /* Espaçamento entre linhas */
   letter-spacing: 0.02em
 }

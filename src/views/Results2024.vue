@@ -26,7 +26,7 @@ export default {
         margin-top: 20px;
         width: 350px;
         height: 500px;
-        border: 1px solid black;
+        border: 1px solid #AB987A;
         border-radius: 8px;
     }
     @media screen and (min-width: 1024px) {

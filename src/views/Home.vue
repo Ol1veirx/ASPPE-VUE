@@ -1,19 +1,25 @@
 <template>
   <div id="home">
     <MyHeader />
+    <FirstContent />
     <MainContent />
+    <MyFooter />
   </div>
 </template>
 
 <script>
-import MyHeader from '@/components/MyHeader.vue';  
-import MainContent from '@/components/MainContent.vue';  
+import MyHeader from '@/components/MyHeader.vue';
+import FirstContent from '@/components/FirstContent.vue';
+import MainContent from '@/components/MainContent.vue';
+import MyFooter from '@/components/Footer.vue';
 
 export default {
   name: 'HomePage',
   components: {
     MyHeader,
+    FirstContent,
     MainContent,
+    MyFooter,
   },
 };
 </script>

@@ -1,8 +1,8 @@
-<template>
+<template name="myheader">
 <header>
     <nav>
         <div class="logo-container">
-                <img src="@/assets/asppelogo.png" alt="logo" class="logo">
+                <img src="@/assets/aspee.jpg" alt="logo" class="logo">
         </div>
 
         <div class="menu-toggle" @click="toggleMenu" v-if="isMobile">
@@ -11,8 +11,8 @@
 
         <div class="header-container" v-show="isMenuOpen || !isMobile">
           <div class="centered-container">
-            <router-link to="/" class="router-link">Início</router-link>
-            <div class="results-link" @click="goToResultsPage">
+            <router-link to="/" class="router-link"><span>Início</span></router-link>
+            <div class="results-link" @click="goToResultsPage" v-if="isMenuOpen || !isMobile">
               <span>Resultados</span>
             </div>
           </div>
@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     toggleMenu() {
+      console.log('toogle menu')
       this.isMenuOpen = !this.isMenuOpen;
     },
     goToResultsPage() {
@@ -55,10 +56,17 @@ export default {
 
 <style scoped>
 
+#myheader{
+  background-color: #F5F5F5;
+
+}
+
 header {
-background: linear-gradient(180deg, rgba(217,37,37,0.10547969187675066) 0%, rgba(242,242,242,1) 64%);
-  color: white;
+  background-color: #0F1626;
+  filter: saturate(150%);
+  border-bottom: 1px solid #AB987A;
   padding: 10px;
+  box-shadow: 1px 1px 5px #044040;
 }
 
 nav {
@@ -79,6 +87,10 @@ nav {
   align-items: center;
 }
 
+.logo-container img{
+  border-radius: 45%;
+}
+
 .logo {
   width: 70px; 
   margin-right: 10px;
@@ -89,9 +101,22 @@ nav {
   align-items: center;
   justify-content: center;
     cursor: pointer;
-    gap: 10px;
+    gap: 60px;
     color: #D92525;
-    font-weight: bold;
+    font-weight: 500;
+}
+
+.router-link{
+  text-decoration: none;
+  color: red;
+}
+
+.results-link{
+  background-color: #e6e6e5;
+  box-shadow: 1px 1px 2px rgb(107, 107, 107);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
 }
 
 .menu-toggle img {
@@ -100,25 +125,38 @@ nav {
 
 
 @media (max-width: 768px) {
+  header {
+    padding: 6px;
+}
     nav{
         display: flex;
-        gap: 20px;
+        gap: 2px;
         justify-content: space-between;
     }
+    .results-link{
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+    } 
     .logo-container img{
-      width: 100px;
+      width: 60px;
+      border-radius: 45%;
     }
     .header-container{
       /* display: none; */
-      position: absolute;
-      top: 11%;
-      left: 70%;
+      position: fixed;
+      top: 73%;
+      left: 71%;
       width: 100px;
       height: 100px;
-      background-color: #044040; 
+      padding: 4px;
+      background-color: #0F1626; 
+      border: 1px solid #AB987A;
       z-index: 1000; 
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      border-radius: 8px; 
+      border-radius: 8px 0 0 8px; 
     }
     .header-container.show {
       display: block;
@@ -126,6 +164,7 @@ nav {
     .centered-container{
       display: flex;
       flex-direction: column;
+      gap: 8px;
     }
 }
 </style>
