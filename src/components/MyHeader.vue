@@ -10,6 +10,16 @@
         <img src="@/assets/menu-icon.svg" alt="" />
       </div>
 
+      <!-- Mostra os links diretamente em computadores -->
+      <div class="header-links-computer" v-if="!isMobile">
+        <router-link to="/" class="router-link-computer">
+          <span>Início</span>
+        </router-link>
+        <router-link to="/resultados" class="router-link-computer">
+          <span class="results-btn">Resultados</span>
+        </router-link>
+      </div>
+
       <!-- Mostra o menu quando for um dispositivo móvel e estiver aberto -->
       <div class="header-container" v-show="isMenuOpen && isMobile">
         <div class="centered-container">
@@ -71,20 +81,34 @@ header {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.header-container {
+.header-links-computer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 25px;
   width: 100%;
+}
+.router-link-computer{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+}
+.results-btn{
+  background-color: #e6e6e5;
+  color: #d92525;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .logo-container {
   display: flex;
-  align-items: center;
+  align-items: start;
+
 }
 
 .logo-container img {

@@ -33,7 +33,7 @@
         Valter, Zé Fofinho, Dr. Ubiracy, Fábio Araújo, Pita, Antônio Lima Bispo
         e David Firmino; às pescadoras femininas Shirley Pereira, Denise Andrade
         e Jidelma Leite; aos pescadores mirins Thiago da Silva Pereira e Layla
-        Gabriele, e a todas as equipes que, ao longo dos anos, participaram e
+        Gabriely, e a todas as equipes que, ao longo dos anos, participaram e
         abrilhantaram nossas competições, em especial Lambari, Vaza-Maré, Maré
         Cheia, Pescana, Peskbebe, Stebam, entre outros.
       </p>
