@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import MyHeader from '@/components/MyHeader.vue';
-import FirstContent from '@/components/FirstContent.vue';
-import MainContent from '@/components/MainContent.vue';
-import MyFooter from '@/components/Footer.vue';
+import MyHeader from "@/components/MyHeader.vue";
+import FirstContent from "@/components/FirstContent.vue";
+import MainContent from "@/components/MainContent.vue";
+import MyFooter from "@/components/Footer.vue";
 
 export default {
-  name: 'HomePage',
+  name: "HomePage",
   components: {
     MyHeader,
     FirstContent,
@@ -25,5 +25,5 @@ export default {
 </script>
 
 <style>
-/* Estilos específicos para a página Home, se necessário */
+
 </style>

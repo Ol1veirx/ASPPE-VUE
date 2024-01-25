@@ -1,29 +1,28 @@
 <template>
   <div class="link-box" @click="redirectToPage">
     <div class="img-box">
-        <slot name="image"></slot>
+      <slot name="image"></slot>
     </div>
     <div class="details-box">
-        <slot></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'BoxEtaps',
+  name: "BoxEtaps",
   methods: {
     redirectToPage() {
-      this.$router.push('/resultados2024');
-    }
-  }
+      this.$router.push("/resultados2024");
+    },
+  },
 };
 </script>
 
 <style scoped>
-
 .link-box {
-  background-color: #0F1626;
+  background-color: #0f1626;
   width: 600px;
   height: 150px;
   margin: 0 auto;
@@ -38,9 +37,9 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .link-box{
-      width: 320px;
-      justify-content: center;
+  .link-box {
+    width: 320px;
+    justify-content: center;
   }
 }
 </style>
