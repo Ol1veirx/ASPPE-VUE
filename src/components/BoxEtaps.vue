@@ -23,6 +23,7 @@ export default {
 <style scoped>
 .link-box {
   background-color: #0f1626;
+  filter: saturate(150%);
   width: 600px;
   height: 150px;
   margin: 0 auto;
