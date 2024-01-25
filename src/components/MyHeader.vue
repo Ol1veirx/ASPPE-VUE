@@ -1,26 +1,22 @@
-<template name="myheader">
+<template>
   <header>
     <nav>
       <div class="logo-container">
         <img src="@/assets/aspee.jpg" alt="logo" class="logo" />
       </div>
 
-      <div class="menu-toggle" @click="toggleMenu" v-if="isMobile">
-        <img src="@/assets/menu-icon.svg" alt="" />
+      <div class="menu-toggle" @click="toggleMenu">
+        <img src="@/assets/menu-icon.svg" alt="Menu" />
       </div>
 
-      <div class="header-container" v-show="isMenuOpen || !isMobile">
+      <div class="header-container" v-if="isMenuVisible">
         <div class="centered-container">
-          <router-link to="/" class="router-link"
-            ><span>Início</span></router-link
-          >
-          <div
-            class="results-link"
-            @click="goToResultsPage"
-            v-if="isMenuOpen || !isMobile"
-          >
+          <router-link to="/" class="router-link">
+            <span>Início</span>
+          </router-link>
+          <router-link to="/resultados" class="router-link">
             <span>Resultados</span>
-          </div>
+          </router-link>
         </div>
       </div>
     </nav>
@@ -32,32 +28,22 @@ export default {
   name: "MyHeader",
   data() {
     return {
-      isMenuOpen: false,
-      isMobile: false,
+      isMenuVisible: false,
     };
   },
-  mounted() {
-    this.checkIsMobile();
-    window.addEventListener("resize", this.checkIsMobile);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.checkIsMobile);
+  computed: {
+    menuIcon() {
+      return this.isMenuVisible ? "@/assets/close-icon.svg" : "@/assets/menu-icon.svg";
+    }
   },
   methods: {
     toggleMenu() {
-      console.log("toogle menu");
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-    goToResultsPage() {
-      this.$router.push("/resultados");
-      this.isMenuOpen = false; 
-    },
-    checkIsMobile() {
-      this.isMobile = window.innerWidth <= 768; 
+      this.isMenuVisible = !this.isMenuVisible;
     },
   },
 };
 </script>
+
 
 <style scoped>
 #myheader {
