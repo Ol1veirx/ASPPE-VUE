@@ -23,8 +23,7 @@ export default {
 
 <style scoped>
 footer {
-  padding: 25px;
-  height: 100px;
+  padding: 10px;
 }
 
 .footer-content {
@@ -32,7 +31,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3px;
   color: black;
 }
 .footer-content p {
