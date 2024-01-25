@@ -1,22 +1,26 @@
-<template>
+<template name="myheader">
   <header>
     <nav>
       <div class="logo-container">
         <img src="@/assets/aspee.jpg" alt="logo" class="logo" />
       </div>
 
-      <div class="menu-toggle" @click="toggleMenu">
-        <img src="@/assets/menu-icon.svg" alt="Menu" />
+      <div class="menu-toggle" @click="toggleMenu" v-if="isMobile">
+        <img src="@/assets/menu-icon.svg" alt="" />
       </div>
 
-      <div class="header-container" v-if="isMenuOpen">
+      <div class="header-container" v-show="isMenuOpen || !isMobile">
         <div class="centered-container">
-          <router-link to="/" class="router-link">
-            <span>Início</span>
-          </router-link>
-          <router-link to="/resultados" class="router-link">
+          <router-link to="/" class="router-link"
+            ><span>Início</span></router-link
+          >
+          <div
+            class="results-link"
+            @click="goToResultsPage"
+            v-if="isMenuOpen || !isMobile"
+          >
             <span>Resultados</span>
-          </router-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -29,21 +33,31 @@ export default {
   data() {
     return {
       isMenuOpen: false,
+      isMobile: false,
     };
   },
-  computed: {
-    menuIcon() {
-      return this.isMenuOpen ? "@/assets/close-icon.svg" : "@/assets/menu-icon.svg";
-    }
+  mounted() {
+    this.checkIsMobile();
+    window.addEventListener("resize", this.checkIsMobile);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.checkIsMobile);
   },
   methods: {
     toggleMenu() {
+      console.log("toogle menu");
       this.isMenuOpen = !this.isMenuOpen;
+    },
+    goToResultsPage() {
+      this.$router.push("/resultados");
+      this.isMenuOpen = false; 
+    },
+    checkIsMobile() {
+      this.isMobile = window.innerWidth <= 768; 
     },
   },
 };
 </script>
-
 
 <style scoped>
 #myheader {
