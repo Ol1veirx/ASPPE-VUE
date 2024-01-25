@@ -24,7 +24,7 @@ export default {
   height: 100vh;
 }
 iframe {
-  margin-top: 20px;
+  margin-top: 60px;
   width: 350px;
   height: 500px;
   border: 1px solid #ab987a;
