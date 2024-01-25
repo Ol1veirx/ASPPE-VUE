@@ -1,26 +1,24 @@
-<template name="myheader">
+<template>
   <header>
     <nav>
       <div class="logo-container">
         <img src="@/assets/aspee.jpg" alt="logo" class="logo" />
       </div>
 
+      <!-- Mostra o ícone do menu apenas em dispositivos móveis -->
       <div class="menu-toggle" @click="toggleMenu" v-if="isMobile">
         <img src="@/assets/menu-icon.svg" alt="" />
       </div>
 
-      <div class="header-container" v-show="isMenuOpen || !isMobile">
+      <!-- Mostra o menu quando for um dispositivo móvel e estiver aberto -->
+      <div class="header-container" v-show="isMenuOpen && isMobile">
         <div class="centered-container">
-          <router-link to="/" class="router-link"
-            ><span>Início</span></router-link
-          >
-          <div
-            class="results-link"
-            @click="goToResultsPage"
-            v-if="isMenuOpen || !isMobile"
-          >
+          <router-link to="/" class="router-link">
+            <span>Início</span>
+          </router-link>
+          <router-link to="/resultados" class="router-link">
             <span>Resultados</span>
-          </div>
+          </router-link>
         </div>
       </div>
     </nav>
@@ -45,16 +43,16 @@ export default {
   },
   methods: {
     toggleMenu() {
-      console.log("toogle menu");
       this.isMenuOpen = !this.isMenuOpen;
     },
-    goToResultsPage() {
-      this.$router.push("/resultados");
-      this.isMenuOpen = false; 
-    },
     checkIsMobile() {
-      this.isMobile = window.innerWidth <= 768; 
+      this.isMobile = window.innerWidth <= 768;
     },
+  },
+  computed: {
+    menuIcon() {
+      return this.isMenuOpen ? "@/assets/close-icon.svg" : "@/assets/menu-icon.svg";
+    }
   },
 };
 </script>
@@ -147,18 +145,15 @@ nav {
     border-radius: 45%;
   }
   .header-container {
-    /* display: none; */
-    position: fixed;
-    top: 99%;
-    left: 0%;
-    width: 100vw;
-    height: 60px;
+    width: 100%;
+    height: auto;
     padding: 4px;
     background-color: #0f1626;
     border: 1px solid #ab987a;
     z-index: 1000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 8px 8px;
+    position: relative; 
   }
   .header-container.show {
     display: block;

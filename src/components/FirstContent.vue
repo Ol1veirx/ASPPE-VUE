@@ -47,7 +47,6 @@ export default {
     flex-direction: column;
     height: 450px;
     margin-top: 65px;
-    position: static;
   }
 
   .left-content h1 {
