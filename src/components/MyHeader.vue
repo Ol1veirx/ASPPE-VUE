@@ -66,7 +66,6 @@ header {
   filter: saturate(150%);
   border-bottom: 1px solid #AB987A;
   padding: 10px;
-  box-shadow: 1px 1px 5px #044040;
 }
 
 nav {
@@ -104,18 +103,19 @@ nav {
     gap: 60px;
     color: #D92525;
     font-weight: 500;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.397);
 }
 
 .router-link{
   text-decoration: none;
-  color: red;
+  color: white;
 }
 
 .results-link{
   background-color: #e6e6e5;
   box-shadow: 1px 1px 2px rgb(107, 107, 107);
   border: none;
-  padding: 10px;
+  padding: 6px;
   border-radius: 3px;
 }
 
@@ -147,24 +147,27 @@ nav {
     .header-container{
       /* display: none; */
       position: fixed;
-      top: 73%;
-      left: 71%;
-      width: 100px;
-      height: 100px;
+      top: 99%;
+      left: 0%;
+      width: 100vw;
+      height: 60px;
       padding: 4px;
       background-color: #0F1626; 
       border: 1px solid #AB987A;
       z-index: 1000; 
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      border-radius: 8px 0 0 8px; 
+      border-radius: 0 0 8px 8px; 
     }
     .header-container.show {
       display: block;
     }
     .centered-container{
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      flex-direction: row;
+      gap: 14px;
+    }
+    .results-link span {
+      color: #D92525;
     }
 }
 </style>

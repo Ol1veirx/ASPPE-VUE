@@ -25,22 +25,30 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     #results {
         background-color: white;
         height: 100vh;
         
     }
     .box-img{
-        width: 200px;
+        width: 300px;
         margin-left: -40px;
     }
     h2{
         font-size: 18px;
         color: white;
     }
+    span{
+      color: #AB987A;
+    }
     p{
         color: #D92525;
+    }
+    @media (max-width: 768px) {
+      .box-img{ 
+        width: 200px;
+      }
     }
     
 </style>

@@ -2,10 +2,10 @@
     <div class="hero-content">
         <div class="left-content">
             <h1>ASPPE</h1>
-            <h2>Associação de Pescadores de Penedo</h2>
+            <h2>Associação Penedense de Pesca Esportiva</h2>
         </div>
         <div class="right-content">
-            <img src="@/assets/peba.jpeg" alt="">
+            <img src="@/assets/firstImg.jpeg" alt="">
         </div>
     </div>
 
@@ -48,8 +48,8 @@ export default {
     }
 
     .right-content img{
-        width: 550px;
-        height: 550px;
+        width: 700px;
+        height: 500px;
         border-radius: 20px 5px 20px 5px;
         box-shadow: 2px 2px 12px #AB987A;
     }
@@ -71,7 +71,7 @@ export default {
 
         .right-content img{
             width: 320px;
-            height: 300px;
+            height: 250px;
             margin-top: 15px;
             border-radius: 4px;
         }

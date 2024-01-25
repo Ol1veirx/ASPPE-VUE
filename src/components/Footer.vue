@@ -3,7 +3,7 @@
          <div class="footer-content">
              <a href="https://www.instagram.com/asppe.penedo/" target="_blank"><img src="@/assets/instagramIcon.svg" alt=""></a>
              <span>Site desenvolvido por <a href="https://github.com/Ol1veirx" target="_blank">Liedson Danúbio</a></span>
-             <span>© Todos os Direitos Reservados - 2024</span>
+             <p>© Todos os Direitos Reservados - 2024</p>
          </div>
     </footer>
        
@@ -28,6 +28,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 3px;
+        color: black;
+    }
+    .footer-content p{
+        color: black;
     }
 
     footer img{
