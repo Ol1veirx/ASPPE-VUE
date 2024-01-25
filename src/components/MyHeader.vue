@@ -9,7 +9,7 @@
         <img src="@/assets/menu-icon.svg" alt="Menu" />
       </div>
 
-      <div class="header-container" v-if="isMenuVisible">
+      <div class="header-container" v-if="isMenuOpen">
         <div class="centered-container">
           <router-link to="/" class="router-link">
             <span>Início</span>
@@ -28,17 +28,17 @@ export default {
   name: "MyHeader",
   data() {
     return {
-      isMenuVisible: false,
+      isMenuOpen: false,
     };
   },
   computed: {
     menuIcon() {
-      return this.isMenuVisible ? "@/assets/close-icon.svg" : "@/assets/menu-icon.svg";
+      return this.isMenuOpen ? "@/assets/close-icon.svg" : "@/assets/menu-icon.svg";
     }
   },
   methods: {
     toggleMenu() {
-      this.isMenuVisible = !this.isMenuVisible;
+      this.isMenuOpen = !this.isMenuOpen;
     },
   },
 };
